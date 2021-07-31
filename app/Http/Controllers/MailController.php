@@ -24,9 +24,9 @@ class MailController extends Controller
         );
         $headers = implode("\r\n", $headers);
 
-        if (mail($subject, $message, $headers)) {
+        if(mail($to,$subject, $message,$headers)) {
             return "mail envoyé";
-        } else {
+        }else{
             return  " mail no send";
         }
     }
